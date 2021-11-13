@@ -4,6 +4,8 @@ from babel import Locale
 from babel.support import Translations
 from starlette_context import context
 
+from lazy_string import LazyString
+
 DEFAULT_LOCALE = Locale.parse("en")
 DOMAIN = "messages"
 TRANSLATIONS_DIR = os.path.join(os.path.dirname(__file__), "translations")
@@ -54,4 +56,9 @@ def gettext(string, **variables):
     return s if not variables else s % variables
 
 
+def lazy_gettext(string, **variables):
+    return LazyString(gettext, string, **variables)
+
+
 _ = gettext
+__all__ = ["_", "gettext", "lazy_gettext"]
