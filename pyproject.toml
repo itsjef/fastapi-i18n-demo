@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "fastapi-i18n"
+version = "0.1.0"
+description = ""
+authors = ["Adrian_Cin <adrian@cinnamon.is>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.70.0"
+starlette-context = "^0.3.3"
+Babel = "^2.9.1"
+uvicorn = {extras = ["standard"], version = "^0.15.0"}
+
+[tool.poetry.dev-dependencies]
+ipython = "^7.29.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
